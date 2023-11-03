@@ -11,15 +11,15 @@ color = (255,255,255)
 # OpenCV works in BGR
 
 # colors[un color en especifico]
-colors = {'blue': [np.array([95, 255, 85]), np.array([120, 255, 255])],
+colors = {#'blue': [np.array([95, 255, 85]), np.array([120, 255, 255])],
 
           'red': [np.array([161, 165, 127]), np.array([178, 255, 255])],
 
-          'yellow': [np.array([16, 0, 99]), np.array([39, 255, 255])],
+          #'yellow': [np.array([16, 0, 99]), np.array([39, 255, 255])],
 
           'green': [np.array([33, 19, 105]), np.array([77, 255, 255])],
 
-          'black': [np.array([0, 0, 0]), np.array([60, 60, 60])]}
+          'black': [np.array([0, 0, 0]), np.array([100, 100, 100])]}
 
 def find_color(frame, points, area_min=5000):  # Extrae un color de la imagen.
     mask = cv.inRange(frame, points[0], points[1])  # create mask with boundaries
@@ -37,7 +37,7 @@ def find_color(frame, points, area_min=5000):  # Extrae un color de la imagen.
 
 def get_distance(obj_px_width, obj_real_width, focal_length=637.647):
     return obj_real_width*focal_length/obj_px_width
-
+#cap = cv.VideoCapture(0)
 cap = cv.VideoCapture(0)
 while cap.isOpened(): #main loop
     _, frame = cap.read()
